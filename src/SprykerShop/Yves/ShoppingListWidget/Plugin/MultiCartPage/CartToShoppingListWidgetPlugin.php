@@ -14,6 +14,10 @@ use SprykerShop\Yves\MultiCartPage\Dependency\Plugin\CartToShoppingListWidget\Ca
 class CartToShoppingListWidgetPlugin extends AbstractWidgetPlugin implements CartToShoppingListWidgetPluginInterface
 {
     /**
+     * {@inheritdoc}
+     *
+     * @api
+     *
      * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
      *
      * @return void
@@ -33,7 +37,7 @@ class CartToShoppingListWidgetPlugin extends AbstractWidgetPlugin implements Car
      *
      * @return string
      */
-    public static function getName()
+    public static function getName(): string
     {
         return static::NAME;
     }
@@ -45,7 +49,7 @@ class CartToShoppingListWidgetPlugin extends AbstractWidgetPlugin implements Car
      *
      * @return string
      */
-    public static function getTemplate()
+    public static function getTemplate(): string
     {
         return '@ShoppingListWidget/views/cart-to-shopping-list/cart-to-shopping-list.twig';
     }
