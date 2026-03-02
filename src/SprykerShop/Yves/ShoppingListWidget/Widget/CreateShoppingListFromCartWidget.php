@@ -24,44 +24,27 @@ class CreateShoppingListFromCartWidget extends AbstractWidget
      */
     protected const PARAMETER_FORM = 'form';
 
-    /**
-     * @param int $idQuote
-     */
     public function __construct(int $idQuote)
     {
         $this->addFormParameter($idQuote);
         $this->addIsVisibleParameter();
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'CreateShoppingListFromCartWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@ShoppingListWidget/views/create-shopping-list-from-cart/create-shopping-list-from-cart.twig';
     }
 
-    /**
-     * @return void
-     */
     protected function addIsVisibleParameter(): void
     {
         $this->addParameter(static::PARAMETER_IS_VISIBLE, $this->isVisible());
     }
 
-    /**
-     * @param int $idQuote
-     *
-     * @return void
-     */
     protected function addFormParameter(int $idQuote): void
     {
         $form = null;
@@ -74,9 +57,6 @@ class CreateShoppingListFromCartWidget extends AbstractWidget
         $this->addParameter(static::PARAMETER_FORM, $form);
     }
 
-    /**
-     * @return bool
-     */
     protected function isVisible(): bool
     {
         $customerTransfer = $this->getFactory()->getCustomerClient()->getCustomer();

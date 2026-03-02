@@ -54,21 +54,11 @@ class ShoppingListFromCartForm extends AbstractType
         $this->addShoppingListNameField($builder);
     }
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setRequired(static::OPTION_SHOPPING_LISTS);
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormBuilderInterface $builder
-     *
-     * @return void
-     */
     protected function addQuoteTransferField(FormBuilderInterface $builder): void
     {
         $builder->add(static::FIELD_ID_QUOTE, HiddenType::class);
@@ -90,11 +80,6 @@ class ShoppingListFromCartForm extends AbstractType
         ]);
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormBuilderInterface $builder
-     *
-     * @return void
-     */
     protected function addShoppingListNameField(FormBuilderInterface $builder): void
     {
         $builder->add(static::FIELD_NEW_SHOPPING_LIST_NAME_INPUT, TextType::class, [

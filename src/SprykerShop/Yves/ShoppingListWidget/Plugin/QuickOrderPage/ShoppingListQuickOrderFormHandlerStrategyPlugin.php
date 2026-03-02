@@ -84,12 +84,6 @@ class ShoppingListQuickOrderFormHandlerStrategyPlugin extends AbstractPlugin imp
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListResponseTransfer $shoppingListResponseTransfer
-     * @param \Generated\Shared\Transfer\QuickOrderFormProcessResponseTransfer $quickOrderFormProcessResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuickOrderFormProcessResponseTransfer
-     */
     protected function mapShoppingListResponseToQuickOrderFormProcessResponse(
         ShoppingListResponseTransfer $shoppingListResponseTransfer,
         QuickOrderFormProcessResponseTransfer $quickOrderFormProcessResponseTransfer
@@ -106,11 +100,6 @@ class ShoppingListQuickOrderFormHandlerStrategyPlugin extends AbstractPlugin imp
         return $quickOrderFormProcessResponseTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListResponseTransfer $shoppingListResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\RouteTransfer
-     */
     protected function createRedirectRoute(ShoppingListResponseTransfer $shoppingListResponseTransfer): RouteTransfer
     {
         return (new RouteTransfer())
@@ -122,11 +111,6 @@ class ShoppingListQuickOrderFormHandlerStrategyPlugin extends AbstractPlugin imp
             );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return void
-     */
     protected function assertCustomerTransfer(CustomerTransfer $customerTransfer): void
     {
         $customerTransfer

@@ -96,21 +96,11 @@ class ShoppingListWidgetController extends AbstractController
         }
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     public function indexAction(Request $request): RedirectResponse
     {
         return $this->executeIndexAction($request);
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     protected function executeIndexAction(Request $request): RedirectResponse
     {
         if (!$this->isCsrfTokenValid($request->get(static::PARAM_FORM_CSRF_TOKEN))) {
@@ -142,11 +132,6 @@ class ShoppingListWidgetController extends AbstractController
         ]);
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemTransfer
-     */
     protected function getShoppingListItemTransferFromRequest(Request $request): ShoppingListItemTransfer
     {
         $customerTransfer = $this->getFactory()
@@ -163,11 +148,6 @@ class ShoppingListWidgetController extends AbstractController
         return $shoppingListItemTransfer;
     }
 
-    /**
-     * @param string|null $token
-     *
-     * @return bool
-     */
     protected function isCsrfTokenValid(?string $token): bool
     {
         if (!$token) {
@@ -179,11 +159,6 @@ class ShoppingListWidgetController extends AbstractController
         return $this->getFactory()->getCsrfTokenManager()->isTokenValid($csrfToken);
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     protected function getCsrfValidationErrorRedirectResponse(Request $request): RedirectResponse
     {
         if ($request->headers->has(static::REQUEST_HEADER_REFERER)) {

@@ -49,33 +49,21 @@ class AddItemsToShoppingListWidget extends AbstractWidget
         $this->addShoppingListOptionsParameter();
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'AddItemsToShoppingListWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@ShoppingListWidget/views/shopping-list-add-items/shopping-list-add-items.twig';
     }
 
-    /**
-     * @return void
-     */
     protected function addIsVisibleParameter(): void
     {
         $this->addParameter(static::PARAM_IS_VISIBLE, $this->isVisible());
     }
 
-    /**
-     * @return bool
-     */
     protected function isVisible(): bool
     {
         $customerTransfer = $this->getFactory()->getCustomerClient()->getCustomer();
@@ -95,9 +83,6 @@ class AddItemsToShoppingListWidget extends AbstractWidget
         return true;
     }
 
-    /**
-     * @return void
-     */
     protected function addShoppingListOptionsParameter(): void
     {
         $this->addParameter(static::PARAM_SHOPPING_LIST_OPTIONS, $this->getShoppingListOptions());

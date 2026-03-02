@@ -39,11 +39,6 @@ class AddToShoppingListWidget extends AbstractWidget
      */
     protected const PARAMETER_SHOPPING_LIST_COLLECTION = 'shoppingListCollection';
 
-    /**
-     * @param string $sku
-     * @param bool $isDisabled
-     * @param \Generated\Shared\Transfer\ProductViewTransfer|null $product
-     */
     public function __construct(string $sku, bool $isDisabled, ?ProductViewTransfer $product = null)
     {
         $this->addParameter(static::PARAMETER_SKU, $sku)
@@ -52,25 +47,16 @@ class AddToShoppingListWidget extends AbstractWidget
             ->addParameter(static::PARAMETER_SHOPPING_LIST_COLLECTION, $this->getShoppingListCollection());
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'AddToShoppingListWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@ShoppingListWidget/views/shopping-list/shopping-list.twig';
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\ShoppingListCollectionTransfer
-     */
     protected function getShoppingListCollection(): ShoppingListCollectionTransfer
     {
         $shoppingListCollection = new ShoppingListCollectionTransfer();

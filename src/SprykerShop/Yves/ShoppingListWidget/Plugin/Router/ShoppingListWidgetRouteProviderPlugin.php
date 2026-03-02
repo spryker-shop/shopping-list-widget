@@ -54,11 +54,6 @@ class ShoppingListWidgetRouteProviderPlugin extends AbstractRouteProviderPlugin
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addAddItemRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute('/shopping-list/add-item', 'ShoppingListWidget', 'ShoppingListWidget', 'indexAction');
@@ -67,11 +62,6 @@ class ShoppingListWidgetRouteProviderPlugin extends AbstractRouteProviderPlugin
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addCreateShoppingListFromCartRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute('/shopping-list/create-from-cart', 'ShoppingListWidget', 'CartToShoppingList', 'createFromCartAction');

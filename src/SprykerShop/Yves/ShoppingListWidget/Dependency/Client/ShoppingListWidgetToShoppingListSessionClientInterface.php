@@ -11,8 +11,5 @@ use Generated\Shared\Transfer\ShoppingListCollectionTransfer;
 
 interface ShoppingListWidgetToShoppingListSessionClientInterface
 {
-    /**
-     * @return \Generated\Shared\Transfer\ShoppingListCollectionTransfer
-     */
     public function getCustomerShoppingListCollection(): ShoppingListCollectionTransfer;
 }

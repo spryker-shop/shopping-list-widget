@@ -24,9 +24,6 @@ class ShoppingListWidgetToShoppingListSessionClientBridge implements ShoppingLis
         $this->shoppingListSessionClient = $shoppingListSessionClient;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\ShoppingListCollectionTransfer
-     */
     public function getCustomerShoppingListCollection(): ShoppingListCollectionTransfer
     {
         return $this->shoppingListSessionClient->getCustomerShoppingListCollection();

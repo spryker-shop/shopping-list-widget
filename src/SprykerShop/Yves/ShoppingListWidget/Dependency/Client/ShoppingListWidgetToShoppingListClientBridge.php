@@ -28,9 +28,6 @@ class ShoppingListWidgetToShoppingListClientBridge implements ShoppingListWidget
         $this->shoppingListClient = $shoppingListClient;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\ShoppingListCollectionTransfer
-     */
     public function getCustomerShoppingListCollection(): ShoppingListCollectionTransfer
     {
         return $this->shoppingListClient->getCustomerShoppingListCollection();
@@ -47,11 +44,6 @@ class ShoppingListWidgetToShoppingListClientBridge implements ShoppingListWidget
         return $this->shoppingListClient->addItem($shoppingListItemTransfer, $params);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListResponseTransfer
-     */
     public function addItems(ShoppingListTransfer $shoppingListTransfer): ShoppingListResponseTransfer
     {
         return $this->shoppingListClient->addItems($shoppingListTransfer);
@@ -67,11 +59,6 @@ class ShoppingListWidgetToShoppingListClientBridge implements ShoppingListWidget
         return $this->shoppingListClient->calculateShoppingListSubtotal($shoppingListItemProductViews);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListFromCartRequestTransfer $shoppingListFromCartRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListTransfer
-     */
     public function createShoppingListFromQuote(ShoppingListFromCartRequestTransfer $shoppingListFromCartRequestTransfer): ShoppingListTransfer
     {
         return $this->shoppingListClient->createShoppingListFromQuote($shoppingListFromCartRequestTransfer);

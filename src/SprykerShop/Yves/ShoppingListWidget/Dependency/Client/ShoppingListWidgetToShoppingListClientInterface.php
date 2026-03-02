@@ -15,9 +15,6 @@ use Generated\Shared\Transfer\ShoppingListTransfer;
 
 interface ShoppingListWidgetToShoppingListClientInterface
 {
-    /**
-     * @return \Generated\Shared\Transfer\ShoppingListCollectionTransfer
-     */
     public function getCustomerShoppingListCollection(): ShoppingListCollectionTransfer;
 
     /**
@@ -28,11 +25,6 @@ interface ShoppingListWidgetToShoppingListClientInterface
      */
     public function addItem(ShoppingListItemTransfer $shoppingListItemTransfer, array $params = []): ShoppingListItemTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListResponseTransfer
-     */
     public function addItems(ShoppingListTransfer $shoppingListTransfer): ShoppingListResponseTransfer;
 
     /**
@@ -42,10 +34,5 @@ interface ShoppingListWidgetToShoppingListClientInterface
      */
     public function calculateShoppingListSubtotal(array $shoppingListItemProductViews): int;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListFromCartRequestTransfer $shoppingListFromCartRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListTransfer
-     */
     public function createShoppingListFromQuote(ShoppingListFromCartRequestTransfer $shoppingListFromCartRequestTransfer): ShoppingListTransfer;
 }

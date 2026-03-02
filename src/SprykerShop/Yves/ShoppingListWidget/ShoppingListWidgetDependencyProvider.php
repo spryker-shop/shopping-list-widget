@@ -40,11 +40,6 @@ class ShoppingListWidgetDependencyProvider extends AbstractBundleDependencyProvi
      */
     public const SERVICE_FORM_CSRF_PROVIDER = 'form.csrf_provider';
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     public function provideDependencies(Container $container): Container
     {
         $container = parent::provideDependencies($container);
@@ -56,11 +51,6 @@ class ShoppingListWidgetDependencyProvider extends AbstractBundleDependencyProvi
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addShoppingListClient(Container $container): Container
     {
         $container->set(static::CLIENT_SHOPPING_LIST, function (Container $container) {
@@ -70,11 +60,6 @@ class ShoppingListWidgetDependencyProvider extends AbstractBundleDependencyProvi
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addCustomerClient(Container $container): Container
     {
         $container->set(static::CLIENT_CUSTOMER, function (Container $container) {
@@ -84,11 +69,6 @@ class ShoppingListWidgetDependencyProvider extends AbstractBundleDependencyProvi
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addShoppingListSessionClient(Container $container): Container
     {
         $container->set(static::CLIENT_SHOPPING_LIST_SESSION, function (Container $container) {
@@ -98,11 +78,6 @@ class ShoppingListWidgetDependencyProvider extends AbstractBundleDependencyProvi
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addCsrfProviderService(Container $container): Container
     {
         $container->set(static::SERVICE_FORM_CSRF_PROVIDER, function (Container $container) {

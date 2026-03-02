@@ -27,19 +27,11 @@ class ShoppingListFromCartFormDataProvider
      */
     protected $shoppingListClient;
 
-    /**
-     * @param \SprykerShop\Yves\ShoppingListWidget\Dependency\Client\ShoppingListWidgetToShoppingListClientInterface $shoppingListClient
-     */
     public function __construct(ShoppingListWidgetToShoppingListClientInterface $shoppingListClient)
     {
         $this->shoppingListClient = $shoppingListClient;
     }
 
-    /**
-     * @param int|null $idQuote
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListFromCartRequestTransfer
-     */
     public function getData(?int $idQuote): ShoppingListFromCartRequestTransfer
     {
         return (new ShoppingListFromCartRequestTransfer())
@@ -76,11 +68,6 @@ class ShoppingListFromCartFormDataProvider
         return $shoppingListCollection;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return string
-     */
     protected function generateShoppingListName(ShoppingListTransfer $shoppingListTransfer): string
     {
         return sprintf('%s (%s)', $shoppingListTransfer->getName(), $shoppingListTransfer->getOwner());

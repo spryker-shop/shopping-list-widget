@@ -12,10 +12,5 @@ use Symfony\Component\Form\FormInterface;
 
 interface CreateFromCartHandlerInterface
 {
-    /**
-     * @param \Symfony\Component\Form\FormInterface $cartToShoppingListForm
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListTransfer
-     */
     public function createShoppingListFromCart(FormInterface $cartToShoppingListForm): ShoppingListTransfer;
 }

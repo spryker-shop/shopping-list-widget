@@ -27,17 +27,11 @@ class ShoppingListSubtotalWidget extends AbstractWidget
         $this->addSubtotalParameter($shoppingListItemProductViews);
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'ShoppingListSubtotalWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@ShoppingListWidget/views/shopping-list-subtotal/shopping-list-subtotal.twig';

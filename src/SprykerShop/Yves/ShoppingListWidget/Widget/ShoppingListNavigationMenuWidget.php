@@ -28,25 +28,16 @@ class ShoppingListNavigationMenuWidget extends AbstractWidget
         $this->addShoppingListCollectionParameter();
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'ShoppingListNavigationMenuWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@ShoppingListWidget/views/shopping-list-shop-list/shopping-list-shop-list.twig';
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\ShoppingListCollectionTransfer
-     */
     protected function getCustomerShoppingListCollection(): ShoppingListCollectionTransfer
     {
         return $this->getFactory()
@@ -54,9 +45,6 @@ class ShoppingListNavigationMenuWidget extends AbstractWidget
             ->getCustomerShoppingListCollection();
     }
 
-    /**
-     * @return void
-     */
     protected function addShoppingListCollectionParameter(): void
     {
         $this->addParameter(static::PARAMETER_SHOPPING_LIST_COLLECTION, $this->getCustomerShoppingListCollection());

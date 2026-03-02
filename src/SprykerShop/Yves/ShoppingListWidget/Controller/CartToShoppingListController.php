@@ -106,11 +106,6 @@ class CartToShoppingListController extends AbstractController
         return $this->redirectToReferer($request);
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     protected function redirectToReferer(Request $request): RedirectResponse
     {
         $referer = $request->headers->get(static::PARAM_REFERER);

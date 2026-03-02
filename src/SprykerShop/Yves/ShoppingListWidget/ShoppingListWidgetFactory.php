@@ -25,19 +25,11 @@ use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
  */
 class ShoppingListWidgetFactory extends AbstractFactory
 {
-    /**
-     * @return \SprykerShop\Yves\ShoppingListWidget\Form\DataProvider\ShoppingListFromCartFormDataProvider
-     */
     public function createShoppingListFromCartFormDataProvider(): ShoppingListFromCartFormDataProvider
     {
         return new ShoppingListFromCartFormDataProvider($this->getShoppingListClient());
     }
 
-    /**
-     * @param int|null $idQuote
-     *
-     * @return \Symfony\Component\Form\FormInterface
-     */
     public function getShoppingListFromCartForm(?int $idQuote): FormInterface
     {
         $formDataProvider = $this->createShoppingListFromCartFormDataProvider();
@@ -50,49 +42,31 @@ class ShoppingListWidgetFactory extends AbstractFactory
             );
     }
 
-    /**
-     * @return \SprykerShop\Yves\ShoppingListWidget\Form\FormHandler\CreateFromCartHandlerInterface
-     */
     public function createCreateFromCartHandler(): CreateFromCartHandlerInterface
     {
         return new CreateFromCartHandler($this->getShoppingListClient(), $this->getCustomerClient());
     }
 
-    /**
-     * @return \SprykerShop\Yves\ShoppingListWidget\Dependency\Client\ShoppingListWidgetToShoppingListClientInterface
-     */
     public function getShoppingListClient(): ShoppingListWidgetToShoppingListClientInterface
     {
         return $this->getProvidedDependency(ShoppingListWidgetDependencyProvider::CLIENT_SHOPPING_LIST);
     }
 
-    /**
-     * @return \SprykerShop\Yves\ShoppingListWidget\Dependency\Client\ShoppingListWidgetToCustomerClientInterface
-     */
     public function getCustomerClient(): ShoppingListWidgetToCustomerClientInterface
     {
         return $this->getProvidedDependency(ShoppingListWidgetDependencyProvider::CLIENT_CUSTOMER);
     }
 
-    /**
-     * @return \SprykerShop\Yves\ShoppingListWidget\Dependency\Client\ShoppingListWidgetToShoppingListSessionClientInterface
-     */
     public function getShoppingListSessionClient(): ShoppingListWidgetToShoppingListSessionClientInterface
     {
         return $this->getProvidedDependency(ShoppingListWidgetDependencyProvider::CLIENT_SHOPPING_LIST_SESSION);
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormFactory
-     */
     public function getFormFactory(): FormFactory
     {
         return $this->getProvidedDependency(ApplicationConstants::FORM_FACTORY);
     }
 
-    /**
-     * @return \Symfony\Component\Security\Csrf\CsrfTokenManagerInterface
-     */
     public function getCsrfTokenManager(): CsrfTokenManagerInterface
     {
         return $this->getProvidedDependency(ShoppingListWidgetDependencyProvider::SERVICE_FORM_CSRF_PROVIDER);

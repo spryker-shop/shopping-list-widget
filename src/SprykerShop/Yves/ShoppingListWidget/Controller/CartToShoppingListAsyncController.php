@@ -103,11 +103,6 @@ class CartToShoppingListAsyncController extends AbstractController
         );
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
-     */
     public function viewAction(Request $request): JsonResponse
     {
         $idQuote = $request->get(static::PARAM_ID_QUOTE);
@@ -139,9 +134,6 @@ class CartToShoppingListAsyncController extends AbstractController
         ];
     }
 
-    /**
-     * @return bool
-     */
     protected function getIsWidgetVisible(): bool
     {
         $customerTransfer = $this->getFactory()->getCustomerClient()->getCustomer();
@@ -149,9 +141,6 @@ class CartToShoppingListAsyncController extends AbstractController
         return $customerTransfer && $customerTransfer->getCompanyUserTransfer();
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
-     */
     protected function getMessagesJsonResponse(): JsonResponse
     {
         return $this->jsonResponse([

@@ -34,10 +34,6 @@ class ShoppingListMenuItemWidget extends AbstractWidget
      */
     protected const PARAMETER_ACTIVE_SHOPPING_LIST_ID = 'activeShoppingListId';
 
-    /**
-     * @param string $activePage
-     * @param int|null $activeEntityId
-     */
     public function __construct(string $activePage, ?int $activeEntityId = null)
     {
         $this->addActivePageParameter($activePage);
@@ -45,37 +41,21 @@ class ShoppingListMenuItemWidget extends AbstractWidget
         $this->addActiveShoppingListIdParameter($activePage, $activeEntityId);
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'ShoppingListMenuItemWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@ShoppingListWidget/views/shopping-list-menu-item/shopping-list-menu-item.twig';
     }
 
-    /**
-     * @param string $activePage
-     *
-     * @return void
-     */
     protected function addActivePageParameter(string $activePage): void
     {
         $this->addParameter(static::PARAMETER_IS_ACTIVE_PAGE, $this->isShoppingListPageActive($activePage));
     }
 
-    /**
-     * @param string $activePage
-     *
-     * @return void
-     */
     protected function addShoppingListCollectionParameter(string $activePage): void
     {
         $this->addParameter(
@@ -84,12 +64,6 @@ class ShoppingListMenuItemWidget extends AbstractWidget
         );
     }
 
-    /**
-     * @param string $activePage
-     * @param int|null $activeShoppingListId
-     *
-     * @return void
-     */
     protected function addActiveShoppingListIdParameter(string $activePage, ?int $activeShoppingListId = null): void
     {
         $this->addParameter(
@@ -98,11 +72,6 @@ class ShoppingListMenuItemWidget extends AbstractWidget
         );
     }
 
-    /**
-     * @param string $activePage
-     *
-     * @return bool
-     */
     protected function isShoppingListPageActive(string $activePage): bool
     {
         return $activePage === static::PAGE_KEY_SHOPPING_LIST;

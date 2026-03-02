@@ -25,10 +25,6 @@ class CreateFromCartHandler implements CreateFromCartHandlerInterface
      */
     protected $customerClient;
 
-    /**
-     * @param \SprykerShop\Yves\ShoppingListWidget\Dependency\Client\ShoppingListWidgetToShoppingListClientInterface $shoppingListClient
-     * @param \SprykerShop\Yves\ShoppingListWidget\Dependency\Client\ShoppingListWidgetToCustomerClientInterface $customerClient
-     */
     public function __construct(
         ShoppingListWidgetToShoppingListClientInterface $shoppingListClient,
         ShoppingListWidgetToCustomerClientInterface $customerClient
@@ -37,11 +33,6 @@ class CreateFromCartHandler implements CreateFromCartHandlerInterface
         $this->customerClient = $customerClient;
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormInterface $cartToShoppingListForm
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListTransfer
-     */
     public function createShoppingListFromCart(FormInterface $cartToShoppingListForm): ShoppingListTransfer
     {
         /** @var \Generated\Shared\Transfer\ShoppingListFromCartRequestTransfer $shoppingListFromCartRequest */

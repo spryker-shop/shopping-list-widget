@@ -16,11 +16,6 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class ShoppingListWidgetAsyncController extends AbstractController
 {
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Spryker\Yves\Kernel\View\View
-     */
     public function navigationWidgetViewAction(Request $request): View
     {
         return $this->view(
