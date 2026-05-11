@@ -83,7 +83,7 @@ class ShoppingListMenuItemWidget extends AbstractWidget
     protected function getCustomerShoppingListCollection(): array
     {
         $customerShoppingListCollectionTransfer = $this->getFactory()
-            ->getShoppingListClient()
+            ->getShoppingListSessionClient()
             ->getCustomerShoppingListCollection();
 
         return (array)$customerShoppingListCollectionTransfer->getShoppingLists();
