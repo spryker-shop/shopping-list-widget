@@ -28,14 +28,10 @@ class ShoppingListWidgetAsyncRouteProviderPlugin extends AbstractRouteProviderPl
     public const ROUTE_NAME_SHOPPING_LIST_ASYNC_NAVIGATION_WIDGET_VIEW = 'shopping-list/async/navigation-widget/view';
 
     /**
-     * Specification:
+     * {@inheritDoc}
      * - Adds Routes to the RouteCollection.
      *
      * @api
-     *
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
      */
     public function addRoutes(RouteCollection $routeCollection): RouteCollection
     {

@@ -37,14 +37,10 @@ class ShoppingListWidgetRouteProviderPlugin extends AbstractRouteProviderPlugin
     public const ROUTE_NAME_CART_TO_SHOPPING_LIST = 'shopping-list/create-from-cart';
 
     /**
-     * Specification:
+     * {@inheritDoc}
      * - Adds Routes to the RouteCollection.
      *
      * @api
-     *
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
      */
     public function addRoutes(RouteCollection $routeCollection): RouteCollection
     {
