@@ -4,8 +4,6 @@ export default class FormDataInjector extends Component {
     protected destinationForm: HTMLFormElement;
     protected fieldsToInject: HTMLElement[];
 
-    protected readyCallback(): void {}
-
     protected init(): void {
         this.destinationForm = <HTMLFormElement>document.getElementsByClassName(this.destinationFormClassName)[0];
         this.fieldsToInject = <HTMLElement[]>Array.from(document.querySelectorAll(this.fieldsSelector));

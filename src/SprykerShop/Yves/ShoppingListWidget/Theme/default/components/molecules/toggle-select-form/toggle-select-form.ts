@@ -4,8 +4,6 @@ export default class ToggleSelectForm extends Component {
     protected trigger: HTMLSelectElement;
     protected targets: HTMLElement[];
 
-    protected readyCallback(): void {}
-
     protected init(): void {
         this.trigger = <HTMLSelectElement>this.querySelector('[data-select-trigger]');
         this.targets = <HTMLElement[]>Array.from(document.getElementsByClassName(this.target));

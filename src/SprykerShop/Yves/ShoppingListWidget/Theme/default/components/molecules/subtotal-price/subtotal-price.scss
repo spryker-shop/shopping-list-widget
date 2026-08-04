@@ -1,6 +1,12 @@
+@use 'sass:meta';
+
 @mixin shopping-list-widget-subtotal-price($name: '.subtotal-price') {
     #{$name} {
         background-color: $setting-color-lighter;
+
+        @if meta.mixin-exists(shopping-list-widget-subtotal-price-base-hook) {
+            @include shopping-list-widget-subtotal-price-base-hook;
+        }
 
         @content;
     }
