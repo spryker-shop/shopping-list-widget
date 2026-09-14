@@ -90,9 +90,9 @@ class ShoppingListFromCartForm extends AbstractType
                 'placeholder' => 'cart.add-to-shopping-list.form.placeholder',
             ],
             'constraints' => [
-                new Callback([
-                    'callback' => $this->nameValidateCallback($builder),
-                ]),
+                new Callback(
+                    callback: $this->nameValidateCallback($builder),
+                ),
             ],
         ]);
     }
